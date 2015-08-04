@@ -17,23 +17,6 @@ class Knapsack
 
   # @param items [Array<Array>] An array of pairs (weight, profit) representing the items
   def fill_sack(items)
-    @value = 0
-    @value = fill_sack_recur(items, @capacity)
+
   end
-
-  def fill_sack_recur(items, curCapacity)
-    curValue = 0
-
-    return curValue if items == []
-
-    item = items[0]
-      temp = items - [item]
-      if curCapacity >= item[0]
-        curValue += [fill_sack_recur(temp, curCapacity-item[0]) + item[1], fill_sack_recur(temp, curCapacity)].max
-      else
-        curValue += fill_sack_recur(temp, curCapacity)
-      end
-    curValue
-  end
-
 end
